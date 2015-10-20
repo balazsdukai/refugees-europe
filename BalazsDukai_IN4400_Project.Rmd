@@ -1,0 +1,77 @@
+---
+title: "IN4400 Assignment 3"
+author: "Balázs Dukai | 4516001"
+date: "October 17, 2015"
+classoption: a4paper
+documentclass: report
+output: html_document
+---
+
+
+# Introduction
+
+Refugees, asylum seekers and economic migrants ...
+This report aims to shed more light on what could we expect in level of education from the asylum seekers who wish to settle in Western-Europen countries. Thus my central research question is:
+
+*What percent of the refugees seeking asylum in the Western Europen countries could have a higher educational level?*
+
+In order to answer such a question, I need to set a few assumptions:
+
+*1. Every class or level of a society is equally affected by either political or economical crisis.*
+
+Unfortunately, this might be a false assumption as we can learn in history classes that mostly the lower educated (thus often also poor) classes of society can feel the impact of a crisis the strongest. But because any society and crisis is a complex system, it is not in the scope of this work to estimate a real impact. Hence, for the sake of simplicity I will assume that every class of a society is equally affected by either political or economical crisis.
+
+*2. There is no distinction between political or economic refugee*
+
+It is still under heavy debate that citizens from which country are considered a political or an economic refugee. I will make no distinction in this work and consider both type of refugees simply as refugees.
+
+
+### The main destination countries [^bla]
+"The highest number of first time asylum applicants in the second quarter of 2015 was registeredin Germany (80 900 applicants, or 38% of total applicants in the EU), Hungary (32 700, or 15%), Austria (17 400, or 8%), Italy, France and Sweden (respectively 14 900, 14 700 and 14 300, or 7% each). These 6 Member States together account for more than 80% of all first applicants in the EU-28 (Table 2)." [http://ec.europa.eu/eurostat/statistics-explained/index.php/Asylum_quarterly_report#Main_destination_countries]
+
+### The main departure countries [^1]
+"Citizens of 141 countries sought asylum for the first time in the EU in the second quarter of 2015. Syrians, Afghanis and Albanians were the top 3 citizenships of asylum seekers, lodging around 44 000, 27 000 and 17 700 applications respectively (Table 1)."[http://ec.europa.eu/eurostat/statistics-explained/index.php/Asylum_quarterly_report#Main_destination_countries]
+
+
+**Literature research:**
+
+1. Which level of the society is most affected by war?
+2. Which level of the society is most affected by economic crisis?
+
+Output: a distribution, or percentage of the total population in a country who is most affected
+
+# The eductaional level of the refugees coming to Europe?
+
+extrapolate the percentage from before to make assumptions on the educational level of the refugees
+
+the difference between the the educational level in the main emmigration countries and the main immigration countries
+
+## But what does this all mean for the welcoming countries?
+
+# Conclusion
+
+# References
+
+# Appendix
+
+## Where does the data come from
+
++ The UN Refugee Agency [http://www.unhcr.org/pages/49c3646c4d6.html]
++ World Bank – Refugee population by country or territory of asylum [http://data.worldbank.org/indicator/SM.POP.REFG]
++ UN Table Data on Refugees [http://data.un.org/Data.aspx?d=UNHCR&f=indID%3AType-Ref]
++ eurostat – Asylum Statistics [1] [http://ec.europa.eu/eurostat/statistics-explained/index.php/Asylum_statistics]
++ Education Index – UNDP
+[http://hdr.undp.org/en/content/education-index]
++ Education – World Bank
+[http://data.worldbank.org/topic/education]
+
+1. List of the main emmigration and european immigration countries
+
+2. Census data of the relevant countries 
+
+3. educational indexes of the relevant countries 
+
+    + distribution of elementary, high school, university education –> if all levels of the society is equally affected by war / economic crisis, I can just extrapolate this distribution  to the refugees to determine who came
+
+
+## Code
