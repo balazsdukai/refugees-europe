@@ -2,16 +2,29 @@
 title: "IN4400 Assignment 3"
 author: "Balázs Dukai | 4516001"
 date: "October 17, 2015"
-classoption: a4paper
+output: pdf_document
 documentclass: report
-output: html_document
+classoption: a4paper
 ---
 
 
 # Introduction
 
-Refugees, asylum seekers and economic migrants ...
-This report aims to shed more light on what could we expect in level of education from the asylum seekers who wish to settle in Western-Europen countries. Thus my central research question is:
+Due to the crisis in the Middle East and North-Africa people were and are forced to leave their home, heading towards Europe in hope of a better life. Thus in the last couple of years, especially in the second quarter of 2014 and in 2015, the number of people applying for asylum in Europe increased. In the spring and summer of 2015, even increased amount of people started moving to Europe. **Figure 1** shows the increase in the number of first time asylum appications in the EU–28 states between Q2 2014 and Q2 2015.
+
+The EU and its member states were not prepared for such level of immigration, hence these countries faced infrastructural, governmental and societal problems. People living along the main transit routes were directly affected by the flood of refugees. These events gained a huge media coverage, both in social and broadcasted media. Many of us in Europe had an opinion based on the numbers and figures presented in the media. Altough as it is in events too, these numbers and figures can be confusing or misleading. Therefore I wanted to take a look on what data is available and what does it say about this topic. 
+
+In the following lines I am going to focus on answering the questions, such as:
+
+1. From which countries did most of the refugees come from between Q2 2014 and Q2 2015?
+
+2. Which were their main destination countries in this time frame?
+
+3. How is the refugee to citizen ratio in the main destination countires by the end of Q2 2015?
+
+
+
+Thus my central research question is:
 
 *What percent of the refugees seeking asylum in the Western Europen countries could have a higher educational level?*
 
@@ -33,20 +46,13 @@ It is still under heavy debate that citizens from which country are considered a
 "Citizens of 141 countries sought asylum for the first time in the EU in the second quarter of 2015. Syrians, Afghanis and Albanians were the top 3 citizenships of asylum seekers, lodging around 44 000, 27 000 and 17 700 applications respectively (Table 1)."[http://ec.europa.eu/eurostat/statistics-explained/index.php/Asylum_quarterly_report#Main_destination_countries]
 
 
-**Literature research:**
-
-1. Which level of the society is most affected by war?
-2. Which level of the society is most affected by economic crisis?
-
-Output: a distribution, or percentage of the total population in a country who is most affected
-
-# The eductaional level of the refugees coming to Europe?
-
-extrapolate the percentage from before to make assumptions on the educational level of the refugees
-
 the difference between the the educational level in the main emmigration countries and the main immigration countries
 
 ## But what does this all mean for the welcoming countries?
+
+# Analysis
+
+Graduates from tertiary education (both sexes)
 
 # Conclusion
 
@@ -55,6 +61,10 @@ the difference between the the educational level in the main emmigration countri
 # Appendix
 
 ## Where does the data come from
+
+### World Bank [http://data.worldbank.org/]
+**Syrian Arab Republic**
+Population numbers between 2011–2013 are adjusted for Syrian refugees.
 
 + The UN Refugee Agency [http://www.unhcr.org/pages/49c3646c4d6.html]
 + World Bank – Refugee population by country or territory of asylum [http://data.worldbank.org/indicator/SM.POP.REFG]
