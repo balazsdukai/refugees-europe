@@ -1,3 +1,9 @@
+library(tidyr)
+library(dplyr)
+
+first <- read.table("./data/migr_asyappctzm.tsv", header = T, sep = "\t")
+tbl(first)
+
 # Tree map of origin–destination
 library(treemap)
 a <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/origin.csv")

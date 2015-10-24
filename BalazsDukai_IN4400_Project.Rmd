@@ -3,9 +3,19 @@ title: "IN4400 Assignment 3"
 author: "Balázs Dukai | 4516001"
 date: "October 17, 2015"
 output: pdf_document
-documentclass: report
 classoption: a4paper
+documentclass: report
+csl: csl/apa-single-spaced.csl
+bibliography: IN4400.bib
 ---
+
+# TODOs
+
+1. Make Figure 1 and review 1st paragraph.
+
+    + Figure 1:  Asylum applications (non-EU) in the EU-28 Member States, 2004–2014
+    
+2. Pimp map
 
 
 # Introduction
@@ -16,28 +26,40 @@ The EU and its member states were not prepared for such level of immigration, he
 
 In the following lines I am going to focus on answering the questions, such as:
 
-1. From which countries did most of the refugees come from between Q2 2014 and Q2 2015?
+1. From which countries did most of the refugees come from?
 
 2. Which were their main destination countries in this time frame?
 
 3. How is the refugee to citizen ratio in the main destination countires by the end of Q2 2015?
 
+*4. How strong is each destination country in giving social help?*
+
+### Who is a refugee?
+
+The Geneva Convention on Refugees[@unitednations_convention_1951] defines a refugee as a person who is outside of their own country and has well-founded fear of being prosecuted for reasons of race, religion, nationality, membership of a particular social group or political opinion, and due to this fear this person is unwilling to avail himself of the protection of his country, neither wants to return to it.
+
+Clearly this definition doesn't include people who fled their country due to a severe economic or environmental crisis. In 1951 the impacts of global warming were much less understood. Because according this definition, part of the political debate in the EU in the last time was to determine who is eligible for asylum depending on their country of origin, or who is considered as economic or environmental migrant. The Wikipedia article on refugees gives a good overview on the common cagetgories [@_refugee_2015]. For the sake of simplicity I make no distinction between the three and refer to both categories as refugees. 
 
 
-Thus my central research question is:
+## Data sources
 
-*What percent of the refugees seeking asylum in the Western Europen countries could have a higher educational level?*
+**eurostat**
+Eurostat is the statistical office of the European Union, hence the official source of various european data. The *Asylum and managed migration [@_database]* database is my main data source. The *Asylum quarterly report [@_asylum]* provides an already aggregated report on the first time asylum applicants in Europe. 
 
-In order to answer such a question, I need to set a few assumptions:
+# Tools of the trade
 
-*1. Every class or level of a society is equally affected by either political or economical crisis.*
+My prerequisite was that both data and software has to be open, resp. open source. All the above mentioned data sources satisfy this criteria, and on the software side my workflow looked roughly like this:
 
-Unfortunately, this might be a false assumption as we can learn in history classes that mostly the lower educated (thus often also poor) classes of society can feel the impact of a crisis the strongest. But because any society and crisis is a complex system, it is not in the scope of this work to estimate a real impact. Hence, for the sake of simplicity I will assume that every class of a society is equally affected by either political or economical crisis.
+1. Data preparation and processing
 
-*2. There is no distinction between political or economic refugee*
+    + LibreOffice
 
-It is still under heavy debate that citizens from which country are considered a political or an economic refugee. I will make no distinction in this work and consider both type of refugees simply as refugees.
+2. Data visualisation
 
+    + QGIS for the map
+    + R for the graphs
+    
+# 
 
 ### The main destination countries [^bla]
 "The highest number of first time asylum applicants in the second quarter of 2015 was registeredin Germany (80 900 applicants, or 38% of total applicants in the EU), Hungary (32 700, or 15%), Austria (17 400, or 8%), Italy, France and Sweden (respectively 14 900, 14 700 and 14 300, or 7% each). These 6 Member States together account for more than 80% of all first applicants in the EU-28 (Table 2)." [http://ec.europa.eu/eurostat/statistics-explained/index.php/Asylum_quarterly_report#Main_destination_countries]
@@ -56,7 +78,7 @@ Graduates from tertiary education (both sexes)
 
 # Conclusion
 
-# References
+
 
 # Appendix
 
@@ -85,3 +107,5 @@ Population numbers between 2011–2013 are adjusted for Syrian refugees.
 
 
 ## Code
+
+# References
