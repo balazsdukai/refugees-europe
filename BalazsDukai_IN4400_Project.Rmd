@@ -13,12 +13,6 @@ library(pander)
 
 ```
 
-# TODOs
-
-1. color the bars of the first 5 countries
-
-
-
 # Introduction
 
 Due to the crisis in the Middle East and North-Africa people were and are forced to leave their home, heading towards Europe in hope of a better life. Thus in the last couple of years, especially in the second quarter of 2014 and in 2015, the number of people applying for asylum in Europe increased. In the spring and summer of 2015, even increased amount of people started moving to Europe. Figure 1 shows the increase in the number of first time asylum appications in the EU–28 states between 2004 and 2014. Figure 2 clearly shows the sudden increase in asylum requests that started in April 2015.
@@ -50,14 +44,14 @@ Clearly this definition doesn't include people who fled their country due to a s
 
 ## The data and its sources
 
-**eurostat**<br />
+**eurostat** <br />
 Eurostat is the statistical office of the European Union, hence the official source of various european data. The *Asylum and managed migration [@_database]* database is my main data source. The *Asylum quarterly report [@_asylum]* provides an already aggregated report on the first time asylum applicants in Europe.
 
-**HDI**
-bla bla
+**UNDP – Human Development Reports** <br />
+The Human Development Index aggregates both economic and social indexes and it emphasises the people and their capabilities in assesing a country[@_human].
 
 ### Missing data
-As all the datasets were well organized, my biggest problem was the missing or incomplete data. Some countries didn't data have for a single year, others were missing the complete variable. The most influential gaps in the data sets were:
+As all the data sets were well organized, my biggest problem was the missing or incomplete data. Some countries didn't data have for a single year, others were missing the complete variable. The most influential gaps in the data sets were:
 
 + No data on the activity rates of immigrant population for Germany. 
 
@@ -79,18 +73,18 @@ For this project I wanted to use only open data and open source software. Becaus
     + LibreOffice
     + R 
 
-2. Data visualisation
+2. Data visualization
 
     + QGIS for the map
     + R for the graphs (with ggplot2)
     
-Regarding the data processing I did most of what could be done in LibreOffice, I only opted for R when it offered a much quicker soluion. For the graphs and maps I only used R and QGIS.   
+Regarding the data processing I did most of what could be done in LibreOffice, I only opted for R when it offered a much quicker solution. For the graphs and maps I only used R and QGIS.   
 
 # From which countries did most of the refugees come from and where do they go?
 
-Figure 3 shows that 21% of the asylum seekers in 2014–Q2 2015 came from Syria, while the other main origin countries are Afghanistan (13%), Albania (8%), Iraq (7%) and Kosovo (5%). That the countries from the Middle East are on top is not new, however I was suprised that Albania and Kosovo also ranked in the top 5.
+Figure 3 shows that 21% of the asylum seekers in 2014–Q2 2015 came from Syria, while the other main origin countries are Afghanistan (13%), Albania (8%), Iraq (7%) and Kosovo (5%). That the countries from the Middle East are on top is not new, however I was surprised that Albania and Kosovo also ranked in the top 5.
 
-It is also not suprising that Germany, Hungary, Austria, Italy and France are the top 5 destination countries (Table 1). These countries are either know for their inclusive social policies and relative wellfare (e.g. Germany), or they are the first EU contries along the main migration routes (Figure 4).
+It is also not surprising that Germany, Hungary, Austria, Italy and France are the top 5 destination countries (Table 1). These countries are either know for their inclusive social policies and relative welfare (e.g. Germany), or they are the first EU countries along the main migration routes (Figure 4).
 
 ```{r table_1, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 panderOptions('table.split.table', Inf)
@@ -109,7 +103,7 @@ pander(t, style = 'rmarkdown')
 
 *Fig. 4. The main refugee migration routes [@_this]*
 
-If we split the destination countries by country of origin, we see that refugees form Kosovo and Albania clearly favour Germany, while afghan refugees prefer Hungary. In case of syrians and iraqi people the gap is not that big as in the previous cases, although Germany, Hungary and Austria remain among the top destination countries (Figure 5).
+If we split the destination countries by country of origin, we see that refugees form Kosovo and Albania clearly favor Germany, while afghan refugees prefer Hungary. In case of Syrians and Iraqi people the gap is not that big as in the previous cases, although Germany, Hungary and Austria remain among the top destination countries (Figure 5).
 
 ![Fig. 5.](figures/fig4.png) <br />
 
@@ -117,7 +111,7 @@ If we split the destination countries by country of origin, we see that refugees
 
 ## How is the immigrant to citizen ratio in the main destination countires by the end of 2014?
 
-The EU–28 average of foreign born populaiton per native population is 8.5%. The data indicates that the wealthier Western-European countries with some exceptions mostly fall on this average, while poorer countries fall below the average (Figure 6). From the main destination countries, Germany falls on the average, while Italy, France, Hungary are below average with Hungary having only 1.4%. Austria is above average with 12.4%. Hence the top five destination countries don't belong to the most saturated european countries. 
+The EU–28 average of foreign born population per native population is 8.5%. The data indicates that the wealthier Western-European countries with some exceptions mostly fall on this average, while poorer countries fall below the average (Figure 6). From the main destination countries, Germany falls on the average, while Italy, France, Hungary are below average with Hungary having only 1.4%. Austria is above average with 12.4%. Hence the top five destination countries don't belong to the most saturated European countries. 
 
 ![Fig. 6.](figures/fig5.png) <br />
 
@@ -125,7 +119,7 @@ The EU–28 average of foreign born populaiton per native population is 8.5%. Th
 
 # How many refugees actually get asylum?
 
-Regarding the number of asylum applications per population of the destination country, Hungary clearly stands out, although they accepted only 16% of these applications (Figure 7). Which can be explained as Hungary beeing a country with relatively small population, it is the gateway to the EU as it lies on the main migration route, and the rejective hungarian policy towards the refugees. 
+Regarding the number of asylum applications per population of the destination country, Hungary clearly stands out, although they accepted only 16% of these applications (Figure 7). Which can be explained as Hungary being a country with relatively small population, it is the gateway to the EU as it lies on the main migration route, and the rejective Hungarian policy towards the refugees. 
 
 It is interesting to compare Hungary with Bulgaria. When approaching by land, actually Bulgaria is the first EU country that a refugee has to enter. Still very few of them apply for asylum here, even though their application would be most likely accepted. In other words, nobody wants to stay in Bulgaria. The same is true for Greece.
 
@@ -136,17 +130,19 @@ It is interesting to compare Hungary with Bulgaria. When approaching by land, ac
 
 # In which of the EU–28 countries would the refugees have the highest chance for integration?
 
-There are many different immigrant integration idexes. In this case I assumed that if a refugee would want to stay in the EU, he would want to stay in country that can support in the initial phase until he finds employment. Thus this normalized index is made out of two parts, 
+There are many different immigrant integration indexes. In this case I assumed that if a refugee would want to stay in the EU, he would want to stay in country that can support in the initial phase until he finds employment. Thus this normalized index is made out of two parts, 
 
 1. Human Development Index (HDI) of a country[@_human] and
 
 2. Activity rate of the population that was not born in the respective country.
 
-In other words, a country has a high integration index if it is economically and socially developed (hence the HDI and not GDP) and high percent of it's immigrant population is economically active. I reasoned that if high percent of a country's immigrant populaiton is economically active, it is likely that this country has effective integration policies.
+In other words, a country has a high integration index if it is economically and socially developed (hence the HDI and not GDP) and high percent of it's immigrant population is economically active. I reasoned that if high percent of a country's immigrant population is economically active, it is likely that this country has effective integration policies.
 
-In Figure 8 we can see that the previously identified top destination countries do not belong to the top section[^germany]. 
+In Figure 8 we can see that the previously identified top destination countries do not belong to the top section[^Germany]. With Austria having the best value, a little bit above average. Followed by France as average and Italy and Hungary with below average values. According to this index, in Denmark, Sweden, UK, Finland and in the Netherlands would a refugee have the highest chance for economical integration.
 
-[^germany]: It is very pity that Germany does not provide data on the activity rate of it's foreign born population, as it is the #1 destination of refugees.
+Three countries clearly stand out from the crowd, Norway, Iceland and Switzerland, but they are not part of the EU.
+
+[^Germany]: It is very pity that Germany does not provide data on the activity rate of it's foreign born population, as it is the #1 destination of refugees.
 
 ![Fig. 8.](figures/fig7.png) <br />
 
@@ -154,11 +150,139 @@ In Figure 8 we can see that the previously identified top destination countries 
 
 # Conclusion
 
+Regarding the origin of the refugees the conclusion can be drawn that most of them came from three Middle Eastern countries, Syria, Afghanistan and Iraq which is the result of the several wars in the region in the past years. However also two European countries, Kosovo and Albania are on the top five list. The asylum seekers from these two countries are clearly aiming for Germany as their destination, a distribution that is not valid for the people from the Middle East.
+
+Among the main destinations belonged Germany, Hungary, Austria, Italy and France in this order. With these countries having an average, or below average immigrant to native population ratio. From all the Europe countries Hungary experienced the biggest pressure with regards of the number of asylum applications per population. However it only accepted 16% of the asylum seekers in Q2 2015, while Sweden appears to be a favored and also welcoming country.
+
+According to the immigrant integration index, in the top five destination countries a refugee would have and average or below average chance for economic integration. While Denmark, Sweden, UK, Finland or Netherlands appears to be a better destination in regards to this question. The three non-EU countries, Norway, Iceland and Switzerland clearly stand out from the crowd in this index.
 
 
 # Appendix
 
-
 ## Code
+```{r eval=FALSE}
+# Fig. 1 – Yearly
+yearly <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/2004_14.csv", stringsAsFactors = F)
+monthly <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/2014_15Q2_v2.csv", stringsAsFactors = F)
+monthly$X <- dmy(monthly$X)
+
+p_yearly <- ggplot(yearly, aes(X, EU.28)) + 
+    geom_line(size  = 1.5) + 
+    theme_minimal(base_size = 10) + 
+    labs(x="Year" , y="EU–28 countries [thousands]")
+p_yearly
+ggsave("fig1.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 5, height = 3)
+
+sum_2015Q2 <- sum(monthly[13:18, 2])
+sum_2014 <- sum(monthly[1:12, 2])
+
+# Fig. 2 – Monthly
+p_monthly <- ggplot(monthly, aes(X, EU.28)) + 
+    geom_line(size  = 1.5) + 
+    theme_minimal(base_size = 10) + 
+    labs(x="Month" , y="EU–28 countries [thousands]") +
+    annotate("rect", xmin=monthly[13,1], xmax=monthly[18,1], ymin=50, ymax= 90, 
+               fill=NA, colour="red") +
+    annotate("text", x=monthly[15,1], y=87, label=paste("Total:", sum_2015Q2), size=3)
+p_monthly
+ggsave("fig2.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 5, height = 3)
+
+# Fig. 5 – Main destinations
+origin <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/origin.csv")
+
+tree <- treemap(origin[7:36,], index = c("origin", "destination"),
+        vSize = "percent", vColor = "destination", type = "categorical",
+        palette="Paired", title = "", title.legend = "Destination")
+
+
+
+
+# Fig. 6 – Immigrant/population ratio
+ratio <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/migr_ratio_res.csv", stringsAsFactors = F)
+
+ratio <- gather(ratio, "country", "ratio", 2:32)
+ratio$ratio <- as.numeric(ratio$ratio)
+ratio2014 <- ratio[ratio$year==2014, ]
+top5 <- c("Germany","Hungary", "Austria", "Italy", "France")
+ratio_top5 <- filter(ratio2014, country %in% top5)
+
+p_ratio2014 <- ggplot(ratio2014, aes(country, ratio)) +
+    geom_bar(stat = "identity") + 
+    theme_minimal(base_size = 10) +
+    theme(axis.text.x = element_text(angle = 35,
+                                     hjust = 1,
+                                     vjust = 1,
+                                     size = 10)) +
+    geom_text(aes(label = round(ratio, digits = 0)),
+              size = 3,
+              vjust = -0.8) +
+    geom_hline(aes(yintercept=mean(ratio2014$ratio),
+                   colour = "red")) +
+    annotate("text", x="Romania", y=10,
+             label="EU–28 average", size=4, colour = "red") + 
+    labs(x="", y="Immigrants/Total [%]")
+p_ratio2014
+ggsave("fig5.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 8, height = 4.5)
+
+# Fig. 7 – Acceptance rate
+applicant_pop <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/applicant_per_pop.csv", stringsAsFactors = F)
+app_pop <- applicant_pop[2:33,] 
+app_app <- app_pop[,1:2]
+app_rate <- app_pop[,c(1,3)]
+app_app$panel <- "Nr. of applicant [per million pop.]"
+colnames(app_app) <- c("country", "value", "panel")
+app_rate$panel <- "Acceptance rate [%]"
+colnames(app_rate) <- c("country", "value", "panel")
+app_pop <- rbind(app_app, app_rate)
+
+
+p_appl_pop <- ggplot(app_pop, aes(x = country, y = value)) + 
+    facet_grid(panel ~ .,scales = "free") +
+    geom_bar(data = app_pop,
+             stat = "identity") +
+    geom_text(data = app_rate,
+              aes(country, value, label = value),
+              size = 3,
+              vjust = -1) +
+    theme_minimal(base_size = 10) +
+    theme(axis.text.x = element_text(angle = 35,
+                                     hjust = 1,
+                                     vjust = 1,
+                                     size = 10),
+          axis.text.y = element_text(size = 10),
+          strip.text.y = element_text(size = 10)) +
+    labs(x = "",
+         y = "")
+p_appl_pop
+ggsave("fig6.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 8, height = 6)
+
+# Fig. 8 – Chance for integration
+chance <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/chance_v2.csv", stringsAsFactors = F, na.strings = c("#VALUE!",0))
+chance <- gather(chance, "country", "index", 2:32)
+chance2013 <- chance[chance$year==2013,]
+chance2013 <- arrange(chance2013,desc(index))
+
+p_chance2013 <- ggplot(chance2013, aes(reorder(country, -index), index)) + 
+    geom_point(stat = "identity",
+               shape = 95,
+               size = 10) +
+    scale_y_continuous(limits=c(0.5,1)) +
+    theme_minimal(base_size = 10) +
+    theme(axis.text.x = element_text(angle = 35,
+                                     hjust = 1,
+                                     vjust = 1,
+                                     size = 10)) +
+    geom_text(aes(label = round(index, digits = 2)),
+              size = 3,
+              vjust = -1) +
+    geom_hline(aes(yintercept=mean(chance2013$index, na.rm = T),
+                   colour = "red")) +
+    annotate("text", x="Germany", y=0.83,
+             label="Average", size=3, colour = "red") +
+    labs(x="" , y="Integration index (2013)")
+p_chance2013
+ggsave("fig7.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 8, height = 5)
+```
+
 
 # References

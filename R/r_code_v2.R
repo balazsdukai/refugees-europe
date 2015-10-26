@@ -6,6 +6,7 @@ library(stats)
 library(tidyr)
 library(dplyr)
 
+# Fig. 1
 yearly <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/2004_14.csv", stringsAsFactors = F)
 monthly <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/2014_15Q2_v2.csv", stringsAsFactors = F)
 monthly$X <- dmy(monthly$X)
@@ -22,6 +23,7 @@ ggsave("fig1.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Pro
 sum_2015Q2 <- sum(monthly[13:18, 2])
 sum_2014 <- sum(monthly[1:12, 2])
 
+# Fig. 2
 p_monthly <- ggplot(monthly, aes(X, EU.28)) + 
     geom_line(size  = 1.5) + 
     theme_minimal(base_size = 10) + 
@@ -32,7 +34,7 @@ p_monthly <- ggplot(monthly, aes(X, EU.28)) +
 p_monthly
 ggsave("fig2.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 5, height = 3)
 
-# Main destinations
+# Fig. 5 – Main destinations
 origin <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/origin.csv")
 
 tree <- treemap(origin[7:36,], index = c("origin", "destination"),
@@ -42,7 +44,7 @@ tree <- treemap(origin[7:36,], index = c("origin", "destination"),
 
 
 
-# Immigrant/population ratio
+# Fig. 6 – Immigrant/population ratio
 ratio <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/migr_ratio_res.csv", stringsAsFactors = F)
 
 ratio <- gather(ratio, "country", "ratio", 2:32)
@@ -67,12 +69,12 @@ p_ratio2014 <- ggplot(ratio2014, aes(country, ratio)) +
     geom_hline(aes(yintercept=mean(ratio2014$ratio),
                    colour = "red")) +
     annotate("text", x="Romania", y=10,
-             label="EU–28 average", size=4, colour = "red") + 
+             label="EU–28 average", size=3, colour = "red") + 
     labs(x="", y="Immigrants/Total [%]")
 p_ratio2014
-ggsave("fig5.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 8, height = 4.5)
+ggsave("fig5.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 9.5, height = 4.5)
 
-# Acceptance rate
+# Fig. 7 – Acceptance rate
 applicant_pop <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/applicant_per_pop.csv", stringsAsFactors = F)
 app_pop <- applicant_pop[2:33,] 
 app_app <- app_pop[,1:2]
@@ -91,7 +93,7 @@ p_appl_pop <- ggplot(app_pop, aes(x = country, y = value)) +
     geom_text(data = app_rate,
               aes(country, value, label = value),
               size = 3,
-              vjust = -1) +
+              vjust = -0.8) +
     theme_minimal(base_size = 10) +
     theme(axis.text.x = element_text(angle = 35,
                                      hjust = 1,
@@ -102,9 +104,9 @@ p_appl_pop <- ggplot(app_pop, aes(x = country, y = value)) +
     labs(x = "",
          y = "")
 p_appl_pop
-ggsave("fig6.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 8, height = 6)
+ggsave("fig6.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 9.5, height = 8)
 
-# Chance for integration
+# Fig. 8 – Chance for integration
 chance <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/chance_v2.csv", stringsAsFactors = F, na.strings = c("#VALUE!",0))
 chance <- gather(chance, "country", "index", 2:32)
 chance2013 <- chance[chance$year==2013,]
@@ -129,4 +131,6 @@ p_chance2013 <- ggplot(chance2013, aes(reorder(country, -index), index)) +
              label="Average", size=3, colour = "red") +
     labs(x="" , y="Integration index (2013)")
 p_chance2013
-ggsave("fig7.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 8, height = 5)
+ggsave("fig7.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 9.5, height = 5)
+
+
