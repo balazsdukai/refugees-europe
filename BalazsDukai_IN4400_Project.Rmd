@@ -11,28 +11,30 @@ bibliography: IN4400.bib
 
 # TODOs
 
-1. Make Figure 1 and review 1st paragraph.
-
-    + Figure 1:  Asylum applications (non-EU) in the EU-28 Member States, 2004–2014
-    
-2. Pimp map
+1. color the bars of the first 5 countries
 
 
 # Introduction
 
-Due to the crisis in the Middle East and North-Africa people were and are forced to leave their home, heading towards Europe in hope of a better life. Thus in the last couple of years, especially in the second quarter of 2014 and in 2015, the number of people applying for asylum in Europe increased. In the spring and summer of 2015, even increased amount of people started moving to Europe. **Figure 1** shows the increase in the number of first time asylum appications in the EU–28 states between Q2 2014 and Q2 2015.
+Due to the crisis in the Middle East and North-Africa people were and are forced to leave their home, heading towards Europe in hope of a better life. Thus in the last couple of years, especially in the second quarter of 2014 and in 2015, the number of people applying for asylum in Europe increased. In the spring and summer of 2015, even increased amount of people started moving to Europe. **Figure 1** shows the increase in the number of first time asylum appications in the EU–28 states between 2004 and 2014. **Figure 2** clearly shows the sudden increase in asylum requests that started in April 2015.
+
+![Fig. 1.](figures/fig1.png) <br />
+
+*Fig. 1. Asylum applications in the EU–28 countries in the last ten years*
+
+![Fig. 2.](figures/fig2.png) <br />
+
+*Fig. 2. Asylum applications in the EU–28 countries in 2014–Q2 2015*
 
 The EU and its member states were not prepared for such level of immigration, hence these countries faced infrastructural, governmental and societal problems. People living along the main transit routes were directly affected by the flood of refugees. These events gained a huge media coverage, both in social and broadcasted media. Many of us in Europe had an opinion based on the numbers and figures presented in the media. Altough as it is in events too, these numbers and figures can be confusing or misleading. Therefore I wanted to take a look on what data is available and what does it say about this topic. 
 
 In the following lines I am going to focus on answering the questions, such as:
 
-1. From which countries did most of the refugees come from?
+1. From which countries did most of the refugees come from and which were their main destination countries?
 
-2. Which were their main destination countries in this time frame?
+2. How many of the refugees actually get asylum?
 
-3. How is the refugee to citizen ratio in the main destination countires by the end of Q2 2015?
-
-*4. How strong is each destination country in giving social help?*
+3. In which of the EU–28 countries do the refugees have the highest chance for integration?
 
 ### Who is a refugee?
 
@@ -44,7 +46,15 @@ Clearly this definition doesn't include people who fled their country due to a s
 ## Data sources
 
 **eurostat**
-Eurostat is the statistical office of the European Union, hence the official source of various european data. The *Asylum and managed migration [@_database]* database is my main data source. The *Asylum quarterly report [@_asylum]* provides an already aggregated report on the first time asylum applicants in Europe. 
+Eurostat is the statistical office of the European Union, hence the official source of various european data. The *Asylum and managed migration [@_database]* database is my main data source. The *Asylum quarterly report [@_asylum]* provides an already aggregated report on the first time asylum applicants in Europe.
+
+## Problems in the data
+Missing or incomplete data
+
+    + Lichtenstein
+    + Germany
+    + HDI only available for 2013
+    
 
 # Tools of the trade
 
@@ -59,22 +69,35 @@ My prerequisite was that both data and software has to be open, resp. open sourc
     + QGIS for the map
     + R for the graphs
     
-# 
+# From which countries did most of the refugees come from and where do they go?
 
-### The main destination countries [^bla]
-"The highest number of first time asylum applicants in the second quarter of 2015 was registeredin Germany (80 900 applicants, or 38% of total applicants in the EU), Hungary (32 700, or 15%), Austria (17 400, or 8%), Italy, France and Sweden (respectively 14 900, 14 700 and 14 300, or 7% each). These 6 Member States together account for more than 80% of all first applicants in the EU-28 (Table 2)." [http://ec.europa.eu/eurostat/statistics-explained/index.php/Asylum_quarterly_report#Main_destination_countries]
+**Figure 3**
 
-### The main departure countries [^1]
-"Citizens of 141 countries sought asylum for the first time in the EU in the second quarter of 2015. Syrians, Afghanis and Albanians were the top 3 citizenships of asylum seekers, lodging around 44 000, 27 000 and 17 700 applications respectively (Table 1)."[http://ec.europa.eu/eurostat/statistics-explained/index.php/Asylum_quarterly_report#Main_destination_countries]
+**Figure 4**
+Refugees form Kosovo and Albania clearly favour Germany, while afgan refugees prefer Hungary.
+
+In numbers it looks as:
+
+...*table of nr. of applications per country*...
+
+## How is the immigrant to citizen ratio in the main destination countires by the end of Q2 2015?
+
+Unfortunately there was no current data available on the number of immigrants for 2015.
+
+**Figure 5**
+
+# How many refugees actually get asylum?
+
+**Figure 6**
 
 
-the difference between the the educational level in the main emmigration countries and the main immigration countries
+# In which of the EU–28 countries do the refugees have the highest chance for integration?
 
-## But what does this all mean for the welcoming countries?
+**Figure 7**
 
-# Analysis
+Human Development Index[^_human]
 
-Graduates from tertiary education (both sexes)
+
 
 # Conclusion
 
