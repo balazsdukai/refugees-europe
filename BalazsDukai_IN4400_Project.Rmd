@@ -65,7 +65,9 @@ As all the datasets were well organized, my biggest problem was the missing or i
     
 + No data on asylum acceptance rate for Austria.
 
-    + Similarly to Germany, Austria is the thrid most preferred destination by asylum seekers. 
+    + Similarly to Germany, Austria is the thrid most preferred destination by asylum seekers.
+    
++ The latest Human Development Index is for 2013
 
 
 # Tools of the trade
@@ -134,6 +136,18 @@ It is interesting to compare Hungary with Bulgaria. When approaching by land, ac
 
 # In which of the EU–28 countries would the refugees have the highest chance for integration?
 
+There are many different immigrant integration idexes. In this case I assumed that if a refugee would want to stay in the EU, he would want to stay in country that can support in the initial phase until he finds employment. Thus this normalized index is made out of two parts, 
+
+1. Human Development Index (HDI) of a country[@_human] and
+
+2. Activity rate of the population that was not born in the respective country.
+
+In other words, a country has a high integration index if it is economically and socially developed (hence the HDI and not GDP) and high percent of it's immigrant population is economically active. I reasoned that if high percent of a country's immigrant populaiton is economically active, it is likely that this country has effective integration policies.
+
+In Figure 8 we can see that the previously identified top destination countries do not belong to the top section[^germany]. 
+
+[^germany]: It is very pity that Germany does not provide data on the activity rate of it's foreign born population, as it is the #1 destination of refugees.
+
 ![Fig. 8.](figures/fig7.png) <br />
 
 *Fig. 8. Immigrant integration index, 2013*
@@ -143,29 +157,6 @@ It is interesting to compare Hungary with Bulgaria. When approaching by land, ac
 
 
 # Appendix
-
-## Where does the data come from
-
-### World Bank [http://data.worldbank.org/]
-**Syrian Arab Republic**
-Population numbers between 2011–2013 are adjusted for Syrian refugees.
-
-+ The UN Refugee Agency [http://www.unhcr.org/pages/49c3646c4d6.html]
-+ World Bank – Refugee population by country or territory of asylum [http://data.worldbank.org/indicator/SM.POP.REFG]
-+ UN Table Data on Refugees [http://data.un.org/Data.aspx?d=UNHCR&f=indID%3AType-Ref]
-+ eurostat – Asylum Statistics [1] [http://ec.europa.eu/eurostat/statistics-explained/index.php/Asylum_statistics]
-+ Education Index – UNDP
-[http://hdr.undp.org/en/content/education-index]
-+ Education – World Bank
-[http://data.worldbank.org/topic/education]
-
-1. List of the main emmigration and european immigration countries
-
-2. Census data of the relevant countries 
-
-3. educational indexes of the relevant countries 
-
-    + distribution of elementary, high school, university education –> if all levels of the society is equally affected by war / economic crisis, I can just extrapolate this distribution  to the refugees to determine who came
 
 
 ## Code

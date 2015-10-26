@@ -70,7 +70,7 @@ p_ratio2014 <- ggplot(ratio2014, aes(country, ratio)) +
              label="EU–28 average", size=4, colour = "red") + 
     labs(x="", y="Immigrants/Total [%]")
 p_ratio2014
-ggsave("fig5.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 7, height = 4.5)
+ggsave("fig5.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 8, height = 4.5)
 
 # Acceptance rate
 applicant_pop <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/applicant_per_pop.csv", stringsAsFactors = F)
@@ -90,7 +90,7 @@ p_appl_pop <- ggplot(app_pop, aes(x = country, y = value)) +
              stat = "identity") +
     geom_text(data = app_rate,
               aes(country, value, label = value),
-              size = 4,
+              size = 3,
               vjust = -1) +
     theme_minimal(base_size = 10) +
     theme(axis.text.x = element_text(angle = 35,
@@ -102,7 +102,7 @@ p_appl_pop <- ggplot(app_pop, aes(x = country, y = value)) +
     labs(x = "",
          y = "")
 p_appl_pop
-ggsave("fig6.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 7, height = 5)
+ggsave("fig6.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 8, height = 6)
 
 # Chance for integration
 chance <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/chance_v2.csv", stringsAsFactors = F, na.strings = c("#VALUE!",0))
@@ -115,13 +115,18 @@ p_chance2013 <- ggplot(chance2013, aes(reorder(country, -index), index)) +
                shape = 95,
                size = 10) +
     scale_y_continuous(limits=c(0.5,1)) +
-    theme_minimal(base_size = 12) +
+    theme_minimal(base_size = 10) +
     theme(axis.text.x = element_text(angle = 35,
                                      hjust = 1,
                                      vjust = 1,
-                                     size = 12)) +
+                                     size = 10)) +
     geom_text(aes(label = round(index, digits = 2)),
-              size = 4,
+              size = 3,
               vjust = -1) +
+    geom_hline(aes(yintercept=mean(chance2013$index, na.rm = T),
+                   colour = "red")) +
+    annotate("text", x="Germany", y=0.83,
+             label="Average", size=3, colour = "red") +
     labs(x="" , y="Integration index (2013)")
 p_chance2013
+ggsave("fig7.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 8, height = 5)
