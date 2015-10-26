@@ -24,12 +24,13 @@ sum_2014 <- sum(monthly[1:12, 2])
 
 p_monthly <- ggplot(monthly, aes(X, EU.28)) + 
     geom_line(size  = 1.5) + 
-    theme_minimal(base_size = 12) + 
+    theme_minimal(base_size = 10) + 
     labs(x="Month" , y="EU–28 countries [thousands]") +
     annotate("rect", xmin=monthly[13,1], xmax=monthly[18,1], ymin=50, ymax= 90, 
                fill=NA, colour="red") +
-    annotate("text", x=monthly[15,1], y=87, label=paste("Total:", sum_2015Q2), size=5)
+    annotate("text", x=monthly[15,1], y=87, label=paste("Total:", sum_2015Q2), size=3)
 p_monthly
+ggsave("fig2.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 5, height = 3)
 
 # Main destinations
 origin <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/origin.csv")
@@ -47,23 +48,29 @@ ratio <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-Da
 ratio <- gather(ratio, "country", "ratio", 2:32)
 ratio$ratio <- as.numeric(ratio$ratio)
 ratio2014 <- ratio[ratio$year==2014, ]
+top5 <- c("Germany","Hungary", "Austria", "Italy", "France")
+ratio_top5 <- filter(ratio2014, country %in% top5)
 
 p_ratio2014 <- ggplot(ratio2014, aes(country, ratio)) +
     geom_bar(stat = "identity") + 
 #     geom_point(stat = "identity",
 #                shape = 95,
 #                size = 10) + 
-    theme_minimal(base_size = 12) +
+    theme_minimal(base_size = 10) +
     theme(axis.text.x = element_text(angle = 35,
                                      hjust = 1,
                                      vjust = 1,
-                                     size = 12)) +
+                                     size = 10)) +
     geom_text(aes(label = round(ratio, digits = 0)),
-              size = 4,
-              vjust = -1) +
+              size = 3,
+              vjust = -0.8) +
+    geom_hline(aes(yintercept=mean(ratio2014$ratio),
+                   colour = "red")) +
+    annotate("text", x="Romania", y=10,
+             label="EU–28 average", size=4, colour = "red") + 
     labs(x="", y="Immigrants/Total [%]")
 p_ratio2014
-ggsave("fig5.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/image")
+ggsave("fig5.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 7, height = 4.5)
 
 # Acceptance rate
 applicant_pop <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/applicant_per_pop.csv", stringsAsFactors = F)
@@ -89,13 +96,13 @@ p_appl_pop <- ggplot(app_pop, aes(x = country, y = value)) +
     theme(axis.text.x = element_text(angle = 35,
                                      hjust = 1,
                                      vjust = 1,
-                                     size = 12),
+                                     size = 10),
           axis.text.y = element_text(size = 10),
-          strip.text.y = element_text(size = 12)) +
+          strip.text.y = element_text(size = 10)) +
     labs(x = "",
-         y = "",
-         title = "Applicants per million populaiton and asylum acceptance rate in EU–28 countries")
+         y = "")
 p_appl_pop
+ggsave("fig6.png", path = "~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/figures", width = 7, height = 5)
 
 # Chance for integration
 chance <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/chance_v2.csv", stringsAsFactors = F, na.strings = c("#VALUE!",0))

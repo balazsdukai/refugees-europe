@@ -8,15 +8,20 @@ documentclass: report
 csl: csl/apa-single-spaced.csl
 bibliography: IN4400.bib
 ---
+```{r packages, include=F}
+library(pander)
+
+```
 
 # TODOs
 
 1. color the bars of the first 5 countries
 
 
+
 # Introduction
 
-Due to the crisis in the Middle East and North-Africa people were and are forced to leave their home, heading towards Europe in hope of a better life. Thus in the last couple of years, especially in the second quarter of 2014 and in 2015, the number of people applying for asylum in Europe increased. In the spring and summer of 2015, even increased amount of people started moving to Europe. **Figure 1** shows the increase in the number of first time asylum appications in the EU–28 states between 2004 and 2014. **Figure 2** clearly shows the sudden increase in asylum requests that started in April 2015.
+Due to the crisis in the Middle East and North-Africa people were and are forced to leave their home, heading towards Europe in hope of a better life. Thus in the last couple of years, especially in the second quarter of 2014 and in 2015, the number of people applying for asylum in Europe increased. In the spring and summer of 2015, even increased amount of people started moving to Europe. Figure 1 shows the increase in the number of first time asylum appications in the EU–28 states between 2004 and 2014. Figure 2 clearly shows the sudden increase in asylum requests that started in April 2015.
 
 ![Fig. 1.](figures/fig1.png) <br />
 
@@ -34,7 +39,7 @@ In the following lines I am going to focus on answering the questions, such as:
 
 2. How many of the refugees actually get asylum?
 
-3. In which of the EU–28 countries do the refugees have the highest chance for integration?
+3. In which of the EU–28 countries would the refugees have the highest chance for integration?
 
 ### Who is a refugee?
 
@@ -43,61 +48,95 @@ The Geneva Convention on Refugees[@unitednations_convention_1951] defines a refu
 Clearly this definition doesn't include people who fled their country due to a severe economic or environmental crisis. In 1951 the impacts of global warming were much less understood. Because according this definition, part of the political debate in the EU in the last time was to determine who is eligible for asylum depending on their country of origin, or who is considered as economic or environmental migrant. The Wikipedia article on refugees gives a good overview on the common cagetgories [@_refugee_2015]. For the sake of simplicity I make no distinction between the three and refer to both categories as refugees. 
 
 
-## Data sources
+## The data and its sources
 
-**eurostat**
+**eurostat**<br />
 Eurostat is the statistical office of the European Union, hence the official source of various european data. The *Asylum and managed migration [@_database]* database is my main data source. The *Asylum quarterly report [@_asylum]* provides an already aggregated report on the first time asylum applicants in Europe.
 
-## Problems in the data
-Missing or incomplete data
+**HDI**
+bla bla
 
-    + Lichtenstein
-    + Germany
-    + HDI only available for 2013
+### Missing data
+As all the datasets were well organized, my biggest problem was the missing or incomplete data. Some countries didn't data have for a single year, others were missing the complete variable. The most influential gaps in the data sets were:
+
++ No data on the activity rates of immigrant population for Germany. 
+
+    + Because Germany is the main destination of asylum seekers, this indicator would be very interesting.
     
++ No data on asylum acceptance rate for Austria.
+
+    + Similarly to Germany, Austria is the thrid most preferred destination by asylum seekers. 
+
 
 # Tools of the trade
 
-My prerequisite was that both data and software has to be open, resp. open source. All the above mentioned data sources satisfy this criteria, and on the software side my workflow looked roughly like this:
+For this project I wanted to use only open data and open source software. Because I was dealing with data in spreadsheets which also has geographical reference (countries), I selected the following software: 
 
 1. Data preparation and processing
 
     + LibreOffice
+    + R 
 
 2. Data visualisation
 
     + QGIS for the map
-    + R for the graphs
+    + R for the graphs (with ggplot2)
     
+Regarding the data processing I did most of what could be done in LibreOffice, I only opted for R when it offered a much quicker soluion. For the graphs and maps I only used R and QGIS.   
+
 # From which countries did most of the refugees come from and where do they go?
 
-**Figure 3**
+Figure 3 shows that 21% of the asylum seekers in 2014–Q2 2015 came from Syria, while the other main origin countries are Afghanistan (13%), Albania (8%), Iraq (7%) and Kosovo (5%). That the countries from the Middle East are on top is not new, however I was suprised that Albania and Kosovo also ranked in the top 5.
 
-**Figure 4**
-Refugees form Kosovo and Albania clearly favour Germany, while afgan refugees prefer Hungary.
+It is also not suprising that Germany, Hungary, Austria, Italy and France are the top 5 destination countries (Table 1). These countries are either know for their inclusive social policies and relative wellfare (e.g. Germany), or they are the first EU contries along the main migration routes (Figure 4).
 
-In numbers it looks as:
+```{r table_1, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+panderOptions('table.split.table', Inf)
+set.alignment(default = "right")
+set.caption("*Top 5 destination countries in the EU–28, Q2 2015*")
+t <- read.csv("~/Documents/Studies/MSc_Geomatics_TU_Delft/IN4400_Prog-and-DataSci/IN4400_project/work/destination.csv", header = F)
+names(t) <- c("Destination", "Nr. of applications", "%")
+pander(t, style = 'rmarkdown')
+```
 
-...*table of nr. of applications per country*...
+![Fig. 3.](figures/fig3_s.png) <br />
 
-## How is the immigrant to citizen ratio in the main destination countires by the end of Q2 2015?
+*Fig. 3. The five main origin and destination countries for asylum seekers. Q2 2015*
 
-Unfortunately there was no current data available on the number of immigrants for 2015.
+![Fig. 4.](figures/fig0_v2.png) <br />
 
-**Figure 5**
+*Fig. 4. The main refugee migration routes [@_this]*
+
+If we split the destination countries by country of origin, we see that refugees form Kosovo and Albania clearly favour Germany, while afghan refugees prefer Hungary. In case of syrians and iraqi people the gap is not that big as in the previous cases, although Germany, Hungary and Austria remain among the top destination countries (Figure 5).
+
+![Fig. 5.](figures/fig4.png) <br />
+
+*Fig. 5. Destination countries by country of origin. Q2 2015*
+
+## How is the immigrant to citizen ratio in the main destination countires by the end of 2014?
+
+The EU–28 average of foreign born populaiton per native population is 8.5%. The data indicates that the wealthier Western-European countries with some exceptions mostly fall on this average, while poorer countries fall below the average (Figure 6). From the main destination countries, Germany falls on the average, while Italy, France, Hungary are below average with Hungary having only 1.4%. Austria is above average with 12.4%. Hence the top five destination countries don't belong to the most saturated european countries. 
+
+![Fig. 6.](figures/fig5.png) <br />
+
+*Fig. 6. Foreign born populaiton (european and non-european) per native born populaion, 2014*
 
 # How many refugees actually get asylum?
 
-**Figure 6**
+Regarding the number of asylum applications per population of the destination country, Hungary clearly stands out, although they accepted only 16% of these applications (Figure 7). Which can be explained as Hungary beeing a country with relatively small population, it is the gateway to the EU as it lies on the main migration route, and the rejective hungarian policy towards the refugees. 
+
+It is interesting to compare Hungary with Bulgaria. When approaching by land, actually Bulgaria is the first EU country that a refugee has to enter. Still very few of them apply for asylum here, even though their application would be most likely accepted. In other words, nobody wants to stay in Bulgaria. The same is true for Greece.
+
+![Fig. 7.](figures/fig6.png) <br />
+
+*Fig. 7. Applicants per million populaiton and asylum acceptance rate in EU–28 countries, Q2 2015*
 
 
-# In which of the EU–28 countries do the refugees have the highest chance for integration?
+# In which of the EU–28 countries would the refugees have the highest chance for integration?
 
-**Figure 7**
+![Fig. 8.](figures/fig7.png) <br />
 
-Human Development Index[^_human]
-
-
+*Fig. 8. Immigrant integration index, 2013*
 
 # Conclusion
 
