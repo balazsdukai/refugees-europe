@@ -2,7 +2,7 @@
 title: "IN4400 Assignment 3"
 author: "Balázs Dukai | 4516001"
 date: "October 17, 2015"
-output: pdf_document
+output: html_document
 classoption: a4paper
 documentclass: report
 csl: csl/apa-single-spaced.csl
@@ -15,43 +15,45 @@ library(pander)
 
 # Introduction
 
-Due to the crisis in the Middle East and North-Africa people were and are forced to leave their home, heading towards Europe in hope of a better life. Thus in the last couple of years, especially in the second quarter of 2014 and in 2015, the number of people applying for asylum in Europe increased. In the spring and summer of 2015, even increased amount of people started moving to Europe. Figure 1 shows the increase in the number of first time asylum appications in the EU–28 states between 2004 and 2014. Figure 2 clearly shows the sudden increase in asylum requests that started in April 2015.
+Due to the crisis in the Middle East and North-Africa people were and are forced to leave their home, heading towards Europe in hope of a better life. Thus in the last couple of years, especially in the second quarter of 2014 and in 2015, the number of people applying for asylum in Europe increased. In the spring and summer of 2015, even increased amount of people started moving to Europe. Figure 1 shows this increase in the number of asylum appications in the EU–28 states between 2004 and 2014. Figure 2 shows the sudden increase in asylum requests that started in April 2015.
 
 ![Fig. 1.](figures/fig1.png) <br />
 
-*Fig. 1. Asylum applications in the EU–28 countries in the last ten years*
+*Fig. 1. First time asylum applications in the EU–28 countries in the last ten years*
 
 ![Fig. 2.](figures/fig2.png) <br />
 
-*Fig. 2. Asylum applications in the EU–28 countries in 2014–Q2 2015*
+*Fig. 2. First time asylum applications in the EU–28 countries in 2014–Q2 2015*
 
-The EU and its member states were not prepared for such level of immigration, hence these countries faced infrastructural, governmental and societal problems. People living along the main transit routes were directly affected by the flood of refugees. These events gained a huge media coverage, both in social and broadcasted media. Many of us in Europe had an opinion based on the numbers and figures presented in the media. Altough as it is in events too, these numbers and figures can be confusing or misleading. Therefore I wanted to take a look on what data is available and what does it say about this topic. 
+The EU and its member states were not prepared for such level of immigration, hence these countries faced infrastructural, governmental and societal problems. People living along the main transit routes were directly affected by the flood of refugees. These events gained a huge media coverage, both in social and broadcasted media. Many people in Europe had an opinion based on the numbers and figures presented in the media. Altough as it is in events too, these numbers and figures can be confusing or misleading. Therefore I wanted to take a look on what data is available and what does it say about this topic. 
 
 In the following lines I am going to focus on answering the questions, such as:
 
 1. From which countries did most of the refugees come from and which were their main destination countries?
 
-2. How many of the refugees actually get asylum?
+2. How many of the refugees actually get asylum in the EU?
 
-3. In which of the EU–28 countries would the refugees have the highest chance for integration?
+3. In which of the EU countries would the refugees have the highest chance for integration?
 
 ### Who is a refugee?
 
 The Geneva Convention on Refugees[@unitednations_convention_1951] defines a refugee as a person who is outside of their own country and has well-founded fear of being prosecuted for reasons of race, religion, nationality, membership of a particular social group or political opinion, and due to this fear this person is unwilling to avail himself of the protection of his country, neither wants to return to it.
 
-Clearly this definition doesn't include people who fled their country due to a severe economic or environmental crisis. In 1951 the impacts of global warming were much less understood. Because according this definition, part of the political debate in the EU in the last time was to determine who is eligible for asylum depending on their country of origin, or who is considered as economic or environmental migrant. The Wikipedia article on refugees gives a good overview on the common cagetgories [@_refugee_2015]. For the sake of simplicity I make no distinction between the three and refer to both categories as refugees. 
+Clearly this definition doesn't include people who fled their country due to a severe economic or environmental crisis. In 1951 the impacts of global warming were much less understood. Because according this definition, part of the political debate in the EU in the last time was to determine who is eligible for asylum depending on their country of origin, or who is considered as economic or environmental migrant. The Wikipedia article on refugees gives a good overview on the common cagetgories [@_refugee_2015]. For the sake of simplicity I make no distinction between the three and refer to all categories as refugees. 
 
 
 ## The data and its sources
 
-**eurostat** <br />
+**eurostat**
+
 Eurostat is the statistical office of the European Union, hence the official source of various european data. The *Asylum and managed migration [@_database]* database is my main data source. The *Asylum quarterly report [@_asylum]* provides an already aggregated report on the first time asylum applicants in Europe.
 
-**UNDP – Human Development Reports** <br />
+**UNDP – Human Development Reports**
+
 The Human Development Index aggregates both economic and social indexes and it emphasises the people and their capabilities in assesing a country[@_human].
 
 ### Missing data
-As all the data sets were well organized, my biggest problem was the missing or incomplete data. Some countries didn't data have for a single year, others were missing the complete variable. The most influential gaps in the data sets were:
+As all the data sets were well organized, my biggest problem was the missing or incomplete data. Some countries didn't have data have for a single year, others were missing the complete variable. The most influential gaps for the analysis were:
 
 + No data on the activity rates of immigrant population for Germany. 
 
@@ -82,7 +84,7 @@ Regarding the data processing I did most of what could be done in LibreOffice, I
 
 # From which countries did most of the refugees come from and where do they go?
 
-Figure 3 shows that 21% of the asylum seekers in 2014–Q2 2015 came from Syria, while the other main origin countries are Afghanistan (13%), Albania (8%), Iraq (7%) and Kosovo (5%). That the countries from the Middle East are on top is not new, however I was surprised that Albania and Kosovo also ranked in the top 5.
+Figure 3 shows that 21% of the asylum seekers in 2014–Q2 2015 came from Syria, while the other main origin countries are Afghanistan (13%), Albania (8%), Iraq (7%) and Kosovo (5%). That the countries from the Middle East are on top is not new, however I was surprised that Albania and Kosovo also ranked among the top 5.
 
 It is also not surprising that Germany, Hungary, Austria, Italy and France are the top 5 destination countries (Table 1). These countries are either know for their inclusive social policies and relative welfare (e.g. Germany), or they are the first EU countries along the main migration routes (Figure 4).
 
@@ -111,7 +113,7 @@ If we split the destination countries by country of origin, we see that refugees
 
 ## How is the immigrant to citizen ratio in the main destination countires by the end of 2014?
 
-The EU–28 average of foreign born population per native population is 8.5%. The data indicates that the wealthier Western-European countries with some exceptions mostly fall on this average, while poorer countries fall below the average (Figure 6). From the main destination countries, Germany falls on the average, while Italy, France, Hungary are below average with Hungary having only 1.4%. Austria is above average with 12.4%. Hence the top five destination countries don't belong to the most saturated European countries. 
+The EU average of foreign born population per native population is 8.5%. The data shows that the wealthier Western-European countries with some exceptions mostly fall on this average, while poorer countries fall below the average (Figure 6). From the main destination countries, Germany falls on the average, while Italy, France, Hungary are below average with Hungary having only 1.4%. Austria is above average with 12.4%. Hence the top five destination countries don't belong to the most saturated European countries. 
 
 ![Fig. 6.](figures/fig5.png) <br />
 
@@ -121,14 +123,14 @@ The EU–28 average of foreign born population per native population is 8.5%. Th
 
 Regarding the number of asylum applications per population of the destination country, Hungary clearly stands out, although they accepted only 16% of these applications (Figure 7). Which can be explained as Hungary being a country with relatively small population, it is the gateway to the EU as it lies on the main migration route, and the rejective Hungarian policy towards the refugees. 
 
-It is interesting to compare Hungary with Bulgaria. When approaching by land, actually Bulgaria is the first EU country that a refugee has to enter. Still very few of them apply for asylum here, even though their application would be most likely accepted. In other words, nobody wants to stay in Bulgaria. The same is true for Greece.
+It is interesting to compare Hungary with Bulgaria. When approaching by land, actually Bulgaria is the first EU country that a refugee has to enter. Still very few of them apply for asylum here, even though their application would be most likely accepted. In other words, few wants to stop at least until Hungary. The same is true for Greece.
 
 ![Fig. 7.](figures/fig6.png) <br />
 
 *Fig. 7. Applicants per million populaiton and asylum acceptance rate in EU–28 countries, Q2 2015*
 
 
-# In which of the EU–28 countries would the refugees have the highest chance for integration?
+# In which of the EU countries would the refugees have the highest chance for integration?
 
 There are many different immigrant integration indexes. In this case I assumed that if a refugee would want to stay in the EU, he would want to stay in country that can support in the initial phase until he finds employment. Thus this normalized index is made out of two parts, 
 
@@ -136,7 +138,7 @@ There are many different immigrant integration indexes. In this case I assumed t
 
 2. Activity rate of the population that was not born in the respective country.
 
-In other words, a country has a high integration index if it is economically and socially developed (hence the HDI and not GDP) and high percent of it's immigrant population is economically active. I reasoned that if high percent of a country's immigrant population is economically active, it is likely that this country has effective integration policies.
+In other words, a country has a high integration index if it is economically and socially developed (hence the HDI and not GDP) and high percent of it's immigrant population is economically active. I reason that if high percent of a country's immigrant population is economically active, it is likely that this country has effective integration policies.
 
 In Figure 8 we can see that the previously identified top destination countries do not belong to the top section[^Germany]. With Austria having the best value, a little bit above average. Followed by France as average and Italy and Hungary with below average values. According to this index, in Denmark, Sweden, UK, Finland and in the Netherlands would a refugee have the highest chance for economical integration.
 
@@ -152,7 +154,7 @@ Three countries clearly stand out from the crowd, Norway, Iceland and Switzerlan
 
 Regarding the origin of the refugees the conclusion can be drawn that most of them came from three Middle Eastern countries, Syria, Afghanistan and Iraq which is the result of the several wars in the region in the past years. However also two European countries, Kosovo and Albania are on the top five list. The asylum seekers from these two countries are clearly aiming for Germany as their destination, a distribution that is not valid for the people from the Middle East.
 
-Among the main destinations belonged Germany, Hungary, Austria, Italy and France in this order. With these countries having an average, or below average immigrant to native population ratio. From all the Europe countries Hungary experienced the biggest pressure with regards of the number of asylum applications per population. However it only accepted 16% of the asylum seekers in Q2 2015, while Sweden appears to be a favored and also welcoming country.
+Among the main destinations belongs Germany, Hungary, Austria, Italy and France in this order. With these countries having an average, or below average immigrant to native population ratio. From all the European countries Hungary experienced the biggest pressure with regards of the number of asylum applications per population. However it only accepted 16% of the asylum seekers in Q2 2015, while Sweden appears to be a favored and also welcoming country.
 
 According to the immigrant integration index, in the top five destination countries a refugee would have and average or below average chance for economic integration. While Denmark, Sweden, UK, Finland or Netherlands appears to be a better destination in regards to this question. The three non-EU countries, Norway, Iceland and Switzerland clearly stand out from the crowd in this index.
 
