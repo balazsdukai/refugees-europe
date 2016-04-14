@@ -1,3 +1,5 @@
+*Read the report at: http://rpubs.com/BalazsDukai/refugees-europe*
+
 A short project looking for answers for the following questions:
 
 1. From which countries did most of the refugees come from and which were their main destination countries?
